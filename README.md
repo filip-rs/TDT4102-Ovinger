@@ -2,8 +2,9 @@
 
 This repository contains my work in TDT4102 (C++).
 
-### Warning
+### Disclaimer
 
+Not all tasks are 100% completed. I have passed all the Ingenious gradings, but the programs aren't flawless. They are enough to make you pass however.
 I do not recommend blindly copying this code. It will likely get flagged for plagiarism. I am not responsible for how you use this code. There is no warranty or support to get.
 
 ## Contents
