@@ -3,7 +3,7 @@
 
 MeetingWindow::MeetingWindow(TDT4102::Point position, int width, int height, const std::string& title):
 	// BEGIN 4a
-    AnimationWindow{},
+    AnimationWindow{position.x, position.y, width, height, title} {};
 	// END 4a
 
 	// BEGIN 4e

@@ -26,6 +26,7 @@ int main()
             << "14.\ttest\n"
 			<< "Input: ";
 
+		MeetingWindow::AnimationWindow mainWindows{TDT4102::Point position, int width, int height, const std::string& title};
 
 		Person Filip{"Filip S", "filip@email.com"};
 		Person Kule_Filip{"Kule Filip S", "kulefilip@email.com", std::make_unique<Car>(20)};
