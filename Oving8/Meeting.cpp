@@ -73,5 +73,7 @@ std::ostream& operator<<(std::ostream& os, Meeting& meet) {
         os << particList.at(i) << "\n";
     }
     os << std::endl;
+
+    return os;
 }
 // END 3j
