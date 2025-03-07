@@ -26,7 +26,7 @@ int main() {
     optimizationTask();
 
     // Oppgave 4
-    //testTemplateFunctions();
+    testTemplateFunctions();
     
     // Oppgave 5
     //testMyArray();
