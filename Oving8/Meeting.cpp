@@ -51,6 +51,7 @@ std::vector<std::shared_ptr<Person>> Meeting::findPotentialCoDriving(Meeting &me
         if (meet.getDay() == this->getDay() && meet.getLocation() == this->getLocation()) {
             if (abs((meet.getStartTime() - this->getStartTime())) < 1 && abs((meet.getEndTime() - this->getEndTime())) < 1) {
                 
+                // FÅR IKKE TIL
                 coDriveList.push_back();
             }
         }
