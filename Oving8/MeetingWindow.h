@@ -17,19 +17,23 @@ class MeetingWindow : public TDT4102::AnimationWindow
 {
 	public:
 	// BEGIN 4c
-
+	static constexpr int pad = 30;
+	static constexpr int btnW = 120;
+	static constexpr int btnH = 40;
+	static constexpr int fieldW = 120;
+	static constexpr int fieldH = 40;
 	// END 4c
 
 	MeetingWindow(TDT4102::Point position, int width, int height, const std::string& title);
 
 	// Avslutt knapp
 	// BEGIN 4e
-	
+	TDT4102::Button quitBtn;
 	// END 4e
 
 	// Callback-funksjoner
 	// BEGIN 4d
-
+	void cb_quit();
 	// END 4d
 
 	// Person

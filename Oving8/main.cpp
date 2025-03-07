@@ -1,6 +1,6 @@
 #include "Person.h"
-//#include "Meeting.h"
-//#include "MeetingWindow.h"
+#include "Meeting.h"
+#include "MeetingWindow.h"
 #include <iostream>
 
 int main()
@@ -26,11 +26,16 @@ int main()
             << "14.\ttest\n"
 			<< "Input: ";
 
-		MeetingWindow::AnimationWindow mainWindows{TDT4102::Point position, int width, int height, const std::string& title};
+		// MeetingWindow::AnimationWindow mainWindows{TDT4102::Point position, int width, int height, const std::string& title};
 
-		Person Filip{"Filip S", "filip@email.com"};
-		Person Kule_Filip{"Kule Filip S", "kulefilip@email.com", std::make_unique<Car>(20)};
-		Person Rare_Filip{"Rare Filip S", "rarefilip@email.com", std::make_unique<Car>(1)};
+        auto filippointer = std::make_shared<Person>("Filip S", "filip@email.com");
+        auto kuleFilippointer = std::make_shared<Person>("Kule Filip S", "kulefilip@email.com", std::make_unique<Car>(20));
+        auto rareFilippointer = std::make_shared<Person>("Rare Filip S", "rarefilip@email.com", std::make_unique<Car>(1));
+
+        Meeting mote (1, 12, 13, Campus::trh, "prank", filippointer);
+        Meeting mote2 (1, 12, 13, Campus::trh, "asdds", filippointer);
+
+        mote.addParticipant(kuleFilippointer);
 
 		int menu_choice;
 		cin >> menu_choice;
@@ -40,20 +45,24 @@ int main()
             break;
 
         case 1:
-			std::cout << Filip << "\n";
-			std::cout << Kule_Filip << "\n";
-			std::cout << Rare_Filip << "\n";
+			//std::cout << Filip << "\n";
+			//std::cout << Kule_Filip << "\n";
+			//std::cout << Rare_Filip << "\n";
         
             return 0;
             break;
 
         case 2:
-			return 0;
+            cout << mote.findPotentialCoDriving(mote2).size() << endl;
+
             break;
 
-        case 3:
-            return 0;
+        case 3: {
+            MeetingWindow vindu ({100,100}, 800, 400, "jaja");
+
+            vindu.wait_for_close();
             break;
+        }
 
         case 4:
             return 0;

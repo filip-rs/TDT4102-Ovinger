@@ -1,13 +1,13 @@
 #include "MeetingWindow.h"
 #include <iostream>
 
-MeetingWindow::MeetingWindow(TDT4102::Point position, int width, int height, const std::string& title):
+MeetingWindow::MeetingWindow(TDT4102::Point position, int width, int height, const std::string& title) :
 	// BEGIN 4a
-    AnimationWindow{position.x, position.y, width, height, title} {};
+    AnimationWindow{position.x, position.y, width, height, title}, 
 	// END 4a
 
 	// BEGIN 4e
-	
+	quitBtn({pad, pad}, btnW, btnH, "Quit"),
 	// END 4e
 
 	// BEGIN 5a
@@ -22,11 +22,11 @@ MeetingWindow::MeetingWindow(TDT4102::Point position, int width, int height, con
 {
 	// Felles
 	// BEGIN 4f
-	
+	add(quitBtn);
 	// END 4f
 	
 	// BEGIN 4g
-	
+	quitBtn.setCallback(std::bind(&MeetingWindow::cb_quit, this));
 	// END 4g
 
 	// BEGIN 5d
@@ -47,7 +47,9 @@ MeetingWindow::MeetingWindow(TDT4102::Point position, int width, int height, con
 
 // Callbackfunksjoner
 // BEGIN 4d
-
+void MeetingWindow::cb_quit() {
+	this->close();
+}
 // END 4d
 
 // BEGIN 5c

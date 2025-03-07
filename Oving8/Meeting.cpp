@@ -22,7 +22,7 @@ void Meeting::addParticipant(std::shared_ptr<Person> participant) {
 // BEGIN 3f
 Meeting::Meeting(int day, int startTime, int endTime, Campus location, const std::string& subject, const std::shared_ptr<Person> leader) 
 : day{day}, startTime{startTime}, endTime{endTime}, location{location}, subject{subject}, leader{leader} {
-    participants.push_back(leader);
+    participants.emplace_back(leader);
 }
 // END 3f
 
@@ -49,13 +49,13 @@ std::vector<std::shared_ptr<Person>> Meeting::findPotentialCoDriving(Meeting &me
 
     for (int i = 0; i < otherParticipants.size(); ++i) {
         if (meet.getDay() == this->getDay() && meet.getLocation() == this->getLocation()) {
-            if (abs((meet.getStartTime() - this->getStartTime())) < 1 && abs((meet.getEndTime() - this->getEndTime())) < 1) {
+            if ((abs((meet.getStartTime() - this->getStartTime())) < 1 && abs((meet.getEndTime() - this->getEndTime())) < 1) && participants.at(i)->hasAvailableSeats()) {
                 
-                // FÅR IKKE TIL
-                coDriveList.push_back();
+                coDriveList.push_back(participants.at(i));
             }
         }
     }
+    return coDriveList;
 }
 // END 3i
 
