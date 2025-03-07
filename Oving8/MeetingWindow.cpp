@@ -7,15 +7,19 @@ MeetingWindow::MeetingWindow(TDT4102::Point position, int width, int height, con
 	// END 4a
 
 	// BEGIN 4e
-	quitBtn({pad, pad}, btnW, btnH, "Quit"),
+	quitBtn({width - pad, pad}, btnW, btnH, "Quit"),
 	// END 4e
 
 	// BEGIN 5a
-	#define FOUR_A
+	//#define FOUR_A
+	personName({pad, pad}, fieldW, fieldH, ""),
+	personEmail({pad, 2*pad + fieldH}, fieldW, fieldH, ""),
 	// END 5a
 
 	// BEGIN 5b
-	#define FOUR_B
+	//#define FOUR_B
+	personSeats({pad, 3*pad + 2*fieldH}, fieldW, fieldH, ""),
+	personNewBtn({pad, 4*pad + 3*fieldH}, btnW, btnH, "Lag person"),
 	// END 5b
 
 	dummyArgument{0}
