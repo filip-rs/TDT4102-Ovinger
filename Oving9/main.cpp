@@ -23,12 +23,12 @@ int main() {
     //optimizeVector();
 
     // Oppgave 3
-    optimizationTask();
+    // optimizationTask();
 
     // Oppgave 4
-    testTemplateFunctions();
+    // testTemplateFunctions();
     
     // Oppgave 5
-    //testMyArray();
+    testMyArray();
     return 0;
 }
