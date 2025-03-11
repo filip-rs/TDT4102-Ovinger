@@ -22,6 +22,7 @@ void testVector() {
 
 void optimizeVector(){
     // BEGIN 2d
+    double time_taken;
     Stopwatch timer;
     timer.start();
     std::vector<int> vec;
@@ -29,7 +30,7 @@ void optimizeVector(){
     for (int i = 0; i < 1000000; ++i) {
         vec.push_back(i);
     }
-    double time_taken = timer.stop();
+    time_taken = timer.stop();
     
     std::cout << "Oppgave 2d: " << time_taken << std::endl;
     // END 2d

@@ -20,7 +20,7 @@ int main() {
 
     // Oppgave 2
     //testVector();
-    //optimizeVector();
+    optimizeVector();
 
     // Oppgave 3
     // optimizationTask();
@@ -29,6 +29,6 @@ int main() {
     // testTemplateFunctions();
     
     // Oppgave 5
-    testMyArray();
+    //testMyArray();
     return 0;
 }
